@@ -23,7 +23,7 @@ A relational database organises information into tables.
 A table consists of:
 
 - **Rows:** Individual records in a table.
-- **Columns:** Attributes or properties describing each record.
+- **Columns:** Attributes or properties describing each record. Also known as fields
 - **Data types:** Define the kind of information a column can store.
 
 For example, an employees table could contain employee IDs, names, departments and salaries.
@@ -43,10 +43,10 @@ Database objects should have meaningful and consistent names.
 Good naming practices include:
 
 - Using descriptive names.
-- Avoiding unnecessary spaces.
+- Avoiding spaces.
 - Maintaining consistency.
 - Avoiding reserved SQL keywords as object names.
-- Using underscores where appropriate.
+- Using underscores in place of spaces.
 
 Example:
 
@@ -92,7 +92,8 @@ SELECT *
 FROM employees;
 ```
 
-The asterisk (`*`) selects all columns.
+The asterisk (`*`) selects all columns.  
+It is sometimes referred to as a wild card
 
 ### AS
 
