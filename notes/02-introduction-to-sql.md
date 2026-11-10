@@ -184,4 +184,129 @@ SQL queries could then retrieve measurements, calculate summaries and identify u
 
 **Learning milestone:** Successfully completed the Introduction to SQL course on DataCamp.
 
+## 11. Aggregate Functions and Grouping
+
+### 11.1 Aggregate Functions
+
+Aggregate functions perform calculations on a set of rows and return a single result.
+
+Common aggregate functions include:
+
+| Function | Purpose                        |
+| -------- | ------------------------------ |
+| COUNT()  | Counts rows or non-NULL values |
+| SUM()    | Calculates the total           |
+| AVG()    | Calculates the average         |
+| MIN()    | Finds the minimum value        |
+| MAX()    | Finds the maximum value        |
+
+Example:
+
+```sql
+SELECT COUNT(*)
+FROM world;
+```
+
+This counts all rows in the world table.
+
+`COUNT(*)` counts rows, while `COUNT(column_name)` counts only non-NULL values in the specified column.
+
+### 11.2 GROUP BY
+
+`GROUP BY` groups rows that have the same value in a specified column.
+
+It is commonly used with aggregate functions.
+
+Example:
+
+```sql
+SELECT continent, COUNT(*)
+FROM world
+GROUP BY continent;
+```
+
+This returns the number of countries in each continent.
+
+Without `GROUP BY`, an aggregate function such as `COUNT(*)` would return one result for the entire table.
+
+### 11.3 WHERE and HAVING
+
+Both `WHERE` and `HAVING` are used to filter data, but they operate at different stages.
+
+- `WHERE` filters individual rows before grouping.
+- `HAVING` filters groups after grouping.
+
+Example using WHERE:
+
+```sql
+SELECT name, population
+FROM world
+WHERE population > 50000000;
+```
+
+This retrieves countries with populations greater than 50 million.
+
+Example using HAVING:
+
+```sql
+SELECT continent, COUNT(*)
+FROM world
+GROUP BY continent
+HAVING COUNT(*) > 20;
+```
+
+This retrieves continents containing more than 20 countries.
+
+### 11.4 Combining WHERE, GROUP BY and HAVING
+
+These clauses can be combined to perform more specific queries.
+
+Example:
+
+```sql
+SELECT continent, COUNT(*)
+FROM world
+WHERE population > 5000000
+GROUP BY continent
+HAVING COUNT(*) > 10;
+```
+
+Explanation:
+
+1. `FROM` identifies the table.
+2. `WHERE` selects countries with populations above 5 million.
+3. `GROUP BY` groups the selected countries by continent.
+4. `HAVING` retains continents with more than 10 qualifying countries.
+5. `SELECT` displays the continent and its corresponding count.
+
+### 11.5 Logical SQL Query Execution Order
+
+The logical processing order of a typical SQL query is:
+
+1. FROM
+2. WHERE
+3. GROUP BY
+4. HAVING
+5. SELECT
+6. DISTINCT
+7. ORDER BY
+8. LIMIT
+
+This order helps explain why WHERE filters rows before grouping, while HAVING filters groups after aggregation.
+
+It represents logical query processing, not necessarily the physical execution order chosen by the database engine.
+
+### 11.6 Practical Application
+
+In my DC Power Monitoring System, aggregate functions and grouping could help analyse historical electrical measurements.
+
+For example, if measurements are stored in a database, SQL could calculate:
+
+- Average voltage recorded during a monitoring period.
+- Maximum current recorded.
+- Total number of measurements.
+- Average power consumption over different time intervals.
+
+These operations would help transform raw sensor readings into useful information for monitoring and analysis.
+
 _By Elvis K_
