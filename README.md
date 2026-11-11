@@ -6,9 +6,11 @@ This repository documents my journey into Data Engineering through structured le
 
 My particular interest is exploring the connection between Data Engineering, Electronics, Embedded Systems, Instrumentation and IoT.
 
+I aim to develop the skills required to collect, process, store and analyse data from real-world systems.
+
 ## Learning Objectives
 
-- Develop strong Python and SQL skills.
+- Develop strong Python and SQL programming skills.
 - Understand relational databases and data modelling.
 - Build ETL and ELT data pipelines.
 - Learn data processing and workflow orchestration.
@@ -29,8 +31,10 @@ My particular interest is exploring the connection between Data Engineering, Ele
 ## Repository Structure
 
 ```text
-data-engineering-learning/
+Data-engineering-learning/
 ├── notes/
+│   ├── 01-introduction-to-data-engineering.md
+│   └── 02-introduction-to-sql.md
 ├── sql/
 ├── python/
 ├── projects/
@@ -39,18 +43,43 @@ data-engineering-learning/
 
 ## Learning Progress
 
-- [ ] Introduction to Data Engineering
-- [ ] SQL Fundamentals
+### Completed
+
+- [x] Introduction to Data Engineering
+- [x] Introduction to SQL
+
+### Currently Developing
+
+- [ ] Intermediate SQL
+  - Filtering and pattern matching
+  - Aggregate functions
+  - GROUP BY and HAVING
+  - Joins and subqueries
+
+### Upcoming
+
 - [ ] Python for Data Engineering
-- [ ] Relational Databases
+- [ ] Relational Databases and PostgreSQL
 - [ ] Data Pipelines
 - [ ] ETL and ELT
 - [ ] Workflow Orchestration
 - [ ] Cloud Data Engineering
 
+## Practical Projects
+
+### ESP32 DC Power Monitoring System
+
+An embedded systems project that monitors simulated electrical measurements and displays voltage, current and power readings through a Python dashboard.
+
+The project provides a foundation for exploring how IoT-generated data can be collected, stored and analysed using data engineering techniques.
+
+[View ESP32 DC Power Monitoring System](https://github.com/kings-elvis/ESP32-DC-Power-monitor-)
+
 ## Practical Direction
 
-I intend to apply the concepts learned here to real-world data applications, particularly energy monitoring, instrumentation and IoT systems.
+My long-term goal is to combine Data Engineering with Electronics and Instrumentation.
+
+I am particularly interested in developing systems that transform raw sensor measurements into meaningful information through data collection, database storage, processing and visualisation.
 
 ---
 
